@@ -30,9 +30,7 @@ function delete
 
           Storage::disk('public_uploads')->delete('/image_user/'.$user->image );
       }
-validate rules for update ->email 
 
-                Rule::unique('users')->ignore($user->id),
 
 -----------------------------------------------------------------------
 config file system
