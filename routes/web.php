@@ -28,5 +28,14 @@ Route::prefix('dashboard')->name('dashboard.')->group(function (){
     Route::get('/users/editview/{id?}','POSController@editview')->name('users.editview');
     Route::get('/users/createe','POSController@createview')->name('users.createview');//view
 });
+Route::prefix('dashboard/categories')->name('dashboard.categories.')->group(function (){
+   Route::get('/index','CategoryController@index')->name('index');
+    Route::get('/users','CategoryController@users')->name('users');
+    Route::post('/create','CategoryController@store')->name('create');//modal
+    Route::post('/delete/{id?}','CategoryController@destroy')->name('delete');
+    Route::get('/edit/{id?}','CategoryController@edit')->name('edit');
+    Route::post('/update/{id?}','CategoryController@update')->name('update');
+    Route::get('/createview','CategoryController@create')->name('createview');//view
+});
 
 

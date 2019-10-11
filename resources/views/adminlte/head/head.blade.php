@@ -21,7 +21,7 @@
 <!-- iCheck -->
 
 
-{{--<link rel="stylesheet" href="{{asset('plugins/iCheck/flat/blue.css')}}">--}}
+<link rel="stylesheet" href="{{asset('plugins/iCheck/flat/blue.css')}}">
 {{--<!-- Morris chart -->--}}
 {{--<link rel="stylesheet" href="{{asset('plugins/morris/morris.css')}}">--}}
 {{--<!-- jvectormap -->--}}
@@ -70,6 +70,10 @@
 <link rel="stylesheet" href="{{asset('pos/dist/css/AdminLTE.min.css')}}">
 <!-- AdminLTE Skins. Choose a skin from the css/skins
      folder instead of downloading all of them to reduce the load. -->
+<link rel="stylesheet" href="{{asset('plugins/iCheck/flat/blue.css')}}">
+<script src="http://fronteed.com/iCheck/icheck.js"></script>
+
+
 <link rel="stylesheet" href="{{asset('pos/dist/css/skins/_all-skins.min.css')}}">
 <!-- Morris chart -->
 <link rel="stylesheet" href="{{asset('pos/bower_components/morris.js/morris.css')}}">

@@ -7,6 +7,7 @@
 <script src="{{asset('dist/js/app.min.js')}}"></script>
 <script src="{{asset('/plugins/bootstrap-fileinput/bootstrap-fileinput.js')}}" type="text/javascript"></script>
 
+<link href="http://fronteed.com/iCheck/skins/all.css" rel="stylesheet">
 
 <!-- jQuery 2.1.4 -->
 {{--<script src="{{asset('plugins/jQuery/jQuery-2.1.4.min.js')}}"></script>--}}

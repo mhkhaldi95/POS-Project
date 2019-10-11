@@ -13,6 +13,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="box box-primary">
+
                     <div class="box-header">
 {{--                     هان بجيب العدد على حسب الباجينيشن   {{count($users)}}--}}
                         <h3 class="box-title"> @lang('pos.users')<small>{{$users->total()}}</small></h3>
