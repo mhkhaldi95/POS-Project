@@ -1,0 +1,46 @@
+upload images package
+
+http://image.intervention.io/getting_started/introduction
+-----------------------------------------------------------------------
+Installation
+
+composer require intervention/image
+
+$ php artisan vendor:publish --provider="Intervention\Image\ImageServiceProviderLaravel5"
+-----------------------------------------------------------------------------
+model user
+ protected $appends=['image_path'];
+
+    public function getImagePathAttribute(){
+        return asset('/uploads/image_user/'.$this->image);
+    }
+-----------------------------------------------------------------------------
+function create
+
+ if($request->image){
+
+            Image::make($request->image)->resize(300, null, function ($constraint) {
+                $constraint->aspectRatio();})->save(public_path('/uploads/image_user/'.$request->image->hashName()));
+            $user->image = $request->image->hashName();
+        }
+
+function delete
+
+ if($user->image != 'default-png.png'){
+
+          Storage::disk('public_uploads')->delete('/image_user/'.$user->image );
+      }
+validate rules for update ->email 
+
+                Rule::unique('users')->ignore($user->id),
+
+-----------------------------------------------------------------------
+config file system
+
+'public_uploads' => [
+            'driver' => 'local',
+            'root' => public_path('uploads'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
+
