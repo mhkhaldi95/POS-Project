@@ -20,8 +20,9 @@
             <li class="header"><a href="{{route('dashboard.index')}}" ><i class="fa fa-th"></i>@lang('pos.dasboard')</a></li>
            @if(auth()->user()->hasPermission('read_users'))
             <li class="header"><a href="{{route('dashboard.users')}}" ><i class="fa fa-th"></i>@lang('pos.users')</a></li>
-            <li class="header"><a href="{{route('dashboard.categories.index')}}" ><i class="fa fa-th"></i>@lang('pos.categories')</a></li>
-
+                @if(auth()->user()->hasPermission('read_categories'))
+                <li class="header"><a href="{{route('dashboard.categories.index')}}" ><i class="fa fa-th"></i>@lang('pos.categories')</a></li>
+                @endif
             @endif
         </ul><!-- /.sidebar-menu -->
     </section>

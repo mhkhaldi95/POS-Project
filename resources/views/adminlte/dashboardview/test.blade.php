@@ -6,8 +6,7 @@
             <small>@lang('pos.Control panel')</small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="{{route('dashboard.index')}}"><i class="fa fa-dashboard"></i>  @lang('pos.home')</a></li>
-            <li class="active"> @lang('pos.dasboard')</li>
+            <li class="active"><a href="#"><i class="fa fa-dashboard"></i>  @lang('pos.home')</a></li>
         </ol>
     </section>
 

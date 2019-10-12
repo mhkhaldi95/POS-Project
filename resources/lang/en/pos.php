@@ -30,8 +30,13 @@ return [
     'Select Image'=>'Select Image',
     'Change'=>'Change',
     'ID Not Found'=>'ID Not Found',
-    ''=>'',
-    ''=>'',
+    'ar'=>[
+        'name'=>'The Name in Arabic',
+    ],
+    'en'=>[
+        'name'=>'The Name in English',
+    ],
+    'Remove'=>'Remove',
     ''=>'',
     ''=>'',
     ''=>'',

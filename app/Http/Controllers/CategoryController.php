@@ -7,6 +7,7 @@ use App\User as User;
 use http\Exception;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class CategoryController extends Controller
 {
@@ -44,9 +45,15 @@ class CategoryController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-           'name'=>'required|unique:categories,name' ,
-        ]);
+        $rule=[];
+        foreach (config('translatable.locales') as $locale){
+            $rule+=[$locale.'.name'=>['required',Rule::unique('category_translations','name')]];
+        }
+//        $request->validate([
+//           'ar.*'=>'required|unique:category_translations,name' ,
+//           'en.*'=>'required|unique:category_translations,name' ,
+//        ]);
+        $request->validate($rule);
         Category::create($request->all());
         return redirect()->route('dashboard.categories.index');
     }
@@ -86,9 +93,15 @@ class CategoryController extends Controller
 
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'name'=>'required|unique:categories,name,'.$id ,
-        ]);
+        $rule=[];
+        foreach (config('translatable.locales') as $locale){
+            $rule+=[$locale.'.name'=>['required',Rule::unique('category_translations','name')->ignore($id,'category_id')]];
+        }
+
+        $request->validate($rule);
+//        $request->validate([
+//            'name'=>'required|unique:categories,name,'.$id ,
+//        ]);
         try {
             $category = Category::find($id);
             $category->update($request->all());

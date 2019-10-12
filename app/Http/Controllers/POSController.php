@@ -47,6 +47,7 @@ class POSController extends Controller
         return view('adminlte.dashboardview.create');
     }
     function create(Request $request){
+
         $request->validate($this->rules(),$this->messages());
 
             $user= new User();

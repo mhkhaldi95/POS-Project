@@ -30,18 +30,14 @@
                         <form role="form" id="ad" method="post"  action="{{isset($category)?'/dashboard/categories/update/'.$category->id:'/dashboard/categories/create'}}">
                             @csrf
                             <div class="box-body">
-                                <div class="form-group">
-                                    <label for="name">@lang('pos.name')</label>
-                                    <input type="text" class="form-control" id="name" required value="{{isset($category)?$category->name:''}}"  name="name"  placeholder="@lang('pos.name')">
-                                    <span class="text-danger" id="nameError"></span>
-                                </div>
-
-
-
-
-
-
-
+{{--                                config('locales')=== local=['ar','en]--}}
+                                @foreach(config('translatable.locales') as $locale)
+                                    <div class="form-group">
+                                        <label for="name">@lang('pos.'.$locale.'.name')</label>
+{{--                                        <input type="text" class="form-control"   name="name" id="name" required value="{{isset($category)?$category->name:''}}"  placeholder="@lang('pos.name')">--}}
+                                        <input type="text" class="form-control"   name="{{$locale}}[name]" id="name" required value="{{isset($category)?$category->name:old($locale.'.name')}}"  placeholder="@lang('pos.'.$locale.'.name')">
+                                    </div>
+                                @endforeach
 
                             </div>
                             <!-- /.box-body -->

@@ -6,7 +6,7 @@
             @lang('pos.categories')
         </h1>
         <ol class="breadcrumb">
-            <li><a href="{{route('dashboard.categories.index')}}"><i class="fa fa-dashboard"></i>  @lang('pos.home')</a></li>
+            <li><a href="{{route('dashboard.index')}}"><i class="fa fa-dashboard"></i>  @lang('pos.home')</a></li>
             <li class="active"> @lang('pos.categories')</li>
         </ol>
     </section>
