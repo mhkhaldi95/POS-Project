@@ -32,12 +32,21 @@ return [
     'ID Not Found'=>'ID Not Found',
     'ar'=>[
         'name'=>'The Name in Arabic',
+        'description'=>'The description in Arabic',
     ],
     'en'=>[
         'name'=>'The Name in English',
+        'description'=>'The description in English',
+
     ],
     'Remove'=>'Remove',
-    ''=>'',
-    ''=>'',
-    ''=>'',
+    'purchase_price'=>'purchase_price',
+    'sale_price'=>'sale_price',
+    'stoke'=>'stoke',
+    'profit_percent'=>'profit_percent',
+
+    'NoOfProducts'=>'NoOfProducts',
+    'all_categories'=>'all categories',
+    'related_products'=>'related products',
+    'category'=>'category',
 ];

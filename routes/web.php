@@ -11,8 +11,15 @@
 |
 */
 
+use App\Pruduct;
+use Illuminate\Support\Facades\Request;
+
 Route::get('/','consss@index')->name('welcome');
 Route::get('/admin/change/lang/{lang}',['as'=>'lang','uses'=>'POSController@change']);
+
+Route::get('/helloTest', function (Request $request){
+    return $request::server('HTTP_ACCEPT_LANGUAGE');
+});
 
 
 Auth::routes(['register'=>false]);
@@ -30,12 +37,21 @@ Route::prefix('dashboard')->name('dashboard.')->group(function (){
 });
 Route::prefix('dashboard/categories')->name('dashboard.categories.')->group(function (){
    Route::get('/index','CategoryController@index')->name('index');
-    Route::get('/users','CategoryController@users')->name('users');
+//    Route::get('/users','CategoryController@users')->name('users');
     Route::post('/create','CategoryController@store')->name('create');//modal
     Route::post('/delete/{id?}','CategoryController@destroy')->name('delete');
     Route::get('/edit/{id?}','CategoryController@edit')->name('edit');
     Route::post('/update/{id?}','CategoryController@update')->name('update');
     Route::get('/createview','CategoryController@create')->name('createview');//view
+});
+
+Route::prefix('dashboard/products')->name('dashboard.products.')->group(function (){
+   Route::get('/index','PruductController@index')->name('index');
+    Route::get('/createview','PruductController@create')->name('create');//view
+    Route::post('/store','PruductController@store')->name('store');//modal
+    Route::post('/delete/{product?}','PruductController@destroy')->name('delete');
+    Route::get('/edit/{product?}','PruductController@edit')->name('edit');
+    Route::post('/update/{product?}','PruductController@update')->name('update');
 });
 
 

@@ -6,7 +6,7 @@
             @lang('pos.categories')
         </h1>
         <ol class="breadcrumb">
-            <li><a href="{{route('dashboard.index')}}"><i class="fa fa-dashboard"></i>  @lang('pos.home')</a></li>
+            <li><a href="{{route('dashboard.categories.index')}}"><i class="fa fa-dashboard"></i>  @lang('pos.home')</a></li>
             <li class="active"> @lang('pos.categories')</li>
         </ol>
     </section>
@@ -39,6 +39,7 @@
                                     </div>
 
                                 </div>
+
                                 <div class="input-group input-group-sm hidden-xs" style="width: 250px; display:inline-block;">
 
 
@@ -60,6 +61,8 @@
                             <tr>
                                 <th>#</th>
                                 <th>@lang('pos.name')</th>
+                                <th>@lang('pos.NoOfProducts')</th>
+                                <th>@lang('pos.related_products')</th>
                                 <th>@lang('pos.actions')</th>
 
                             </tr>
@@ -67,7 +70,8 @@
                                 <tr id="tr_{{$category->id}}">
                                     <td>{{$index+1}}</td>
                                     <td>{{$category->name}}</td>
-
+                                    <td>{{$category->products->count()}}</td>
+                                    <td><a href="{{route('dashboard.products.index',['category_id'=>$category->id])}}" class="btn btn-info editu"  >@lang('pos.related_products')</a></td>
                                     <td>
                                         @if(auth()->user()->hasPermission('delete_categories'))
                                             <a data-value="{{$category->id}}" id="delete" class="btn btn-danger  remove-project"> <i class="fa fa-trash" aria-hidden="true"></i>@lang('pos.delete')</a>

@@ -41,8 +41,8 @@ class User extends Authenticatable
     public function getNameAttribute($value){
         return ucfirst($value);
     }
-    protected $appends=['image_path'];
 
+    protected $appends=['image_path'];
     public function getImagePathAttribute(){
         return asset('/uploads/image_user/'.$this->image);
     }

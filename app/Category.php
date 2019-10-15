@@ -11,5 +11,8 @@ class Category extends Model
     public $translatedAttributes = ['name'];
     protected $guarded = array();
 
+    public function products(){
+        return $this->hasMany(Pruduct::class);
+    }
     //
 }

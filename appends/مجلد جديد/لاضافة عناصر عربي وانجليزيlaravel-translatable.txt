@@ -1,0 +1,5 @@
+https://github.com/dimsav/laravel-translatable#installation-in-4-steps
+
+شرح عنها
+
+https://www.youtube.com/watch?v=yLDNsh80Bes&list=PLAOkLQh94O2hc_vcBaqO6hfcuUnSXu-B0&index=17

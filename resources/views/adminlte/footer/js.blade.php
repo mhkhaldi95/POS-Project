@@ -9,6 +9,7 @@
 
 <link href="http://fronteed.com/iCheck/skins/all.css" rel="stylesheet">
 
+<script src="{{asset('/plugins/ckeditor4/ckeditor/ckeditor.js')}}"></script>
 <!-- jQuery 2.1.4 -->
 {{--<script src="{{asset('plugins/jQuery/jQuery-2.1.4.min.js')}}"></script>--}}
 {{--<!-- jQuery UI 1.11.4 -->--}}

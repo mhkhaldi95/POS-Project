@@ -25,7 +25,7 @@ class CategoryController extends Controller
 
 
         $categories = Category::when($request->search, function ($q) use ($request) {
-            return $q->where('name', 'like', '%' . $request->search . '%');
+            return $q->whereTranslationLike('name','%' . $request->search . '%');
         })->latest()->paginate(5);
 
         return view('adminlte.dashboardview.Categories.index', compact('categories'));
@@ -95,10 +95,10 @@ class CategoryController extends Controller
     {
         $rule=[];
         foreach (config('translatable.locales') as $locale){
-            $rule+=[$locale.'.name'=>['required',Rule::unique('category_translations','name')->ignore($id,'category_id')]];
+            $rule+=[$locale.'.name'=>'required'|Rule::unique('category_translations','name')->ignore($id,'category_id')];
         }
 
-        $request->validate($rule);
+        $request->validat($rule);
 //        $request->validate([
 //            'name'=>'required|unique:categories,name,'.$id ,
 //        ]);
