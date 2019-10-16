@@ -49,4 +49,8 @@ return [
     'all_categories'=>'كل الأقسام',
     'related_products'=>'المنتجات المرتبطة',
     'category'=>'القسم',
+    'clients'=>'العملاء',
+    'phone1'                  => 'الهاتف الاول',
+    'phone2'                  => 'الهاتف الثاني',
+    'address'                  => 'العنوان',
 ];

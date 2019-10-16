@@ -53,5 +53,13 @@ Route::prefix('dashboard/products')->name('dashboard.products.')->group(function
     Route::get('/edit/{product?}','PruductController@edit')->name('edit');
     Route::post('/update/{product?}','PruductController@update')->name('update');
 });
+Route::prefix('dashboard/clients')->name('dashboard.clients.')->group(function (){
+   Route::get('/index','ClientController@index')->name('index');
+    Route::get('/createview','ClientController@create')->name('create');//view
+    Route::post('/store','ClientController@store')->name('store');//modal
+    Route::post('/delete/{client?}','ClientController@destroy')->name('delete');
+    Route::get('/edit/{client?}','ClientController@edit')->name('edit');
+    Route::post('/update/{client?}','ClientController@update')->name('update');
+});
 
 

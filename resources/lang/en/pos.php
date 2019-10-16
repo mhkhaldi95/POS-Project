@@ -49,4 +49,7 @@ return [
     'all_categories'=>'all categories',
     'related_products'=>'related products',
     'category'=>'category',
+    'phone1'                  => 'first phone',
+    'phone2'                  => 'second phone',
+    'address'                  => 'address',
 ];
